@@ -1,6 +1,4 @@
 #---------------------------------------------------------------------
-# The MIT License (MIT)
-# 
 # Copyright (c) 2015 manxinator
 # 
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -28,10 +26,10 @@
 
   # Hack! Set variables here!
   #
-#LOCAL_WS_DIR:=/home/tontod/Workspace/TEMP/AOK/local.1.genesis/
-#REMOTE_WS_DIR:=/home/tontod/Workspace/TEMP/AOK/aokLib/
-LOCAL_WS_DIR:=/home/tontod/Workspace/devAOK/local.1.genesis/
-REMOTE_WS_DIR:=/home/tontod/Workspace/devAOK/aokLib
+LOCAL_WS_DIR:=/home/tontod/Workspace/TEMP/aok/local.1.genesis/
+REMOTE_WS_DIR:=/home/tontod/Workspace/TEMP/aok/aokLib/
+#LOCAL_WS_DIR:=/home/tontod/Workspace/devAOK/local.1.genesis/
+#REMOTE_WS_DIR:=/home/tontod/Workspace/devAOK/aokLib
 
 
   # Options
