@@ -24,12 +24,9 @@
 # Created: Mon Mar 30 00:06:47 PDT 2015
 #---------------------------------------------------------------------
 
-  # Hack! Set variables here!
+  # AOK Library is in the remote
   #
-LOCAL_WS_DIR:=/home/tontod/Workspace/TEMP/aok/local.1.genesis/
-REMOTE_WS_DIR:=/home/tontod/Workspace/TEMP/aok/aokLib/
-#LOCAL_WS_DIR:=/home/tontod/Workspace/devAOK/local.1.genesis/
-#REMOTE_WS_DIR:=/home/tontod/Workspace/devAOK/aokLib
+AOKLIB_WS_DIR:=$(REMOTE_WS_DIR)
 
 
   # Options
@@ -53,11 +50,12 @@ endif
 
 #---------------------------------------------------------------------
 
-include ${REMOTE_WS_DIR}/aok/makeAokLoader.mk
+include ${AOKLIB_WS_DIR}/aok/makeAokLoader.mk
 include ${LOCAL_WS_DIR}/app.loaderTest/make.appLoaderTest.mk
 
         #-------------------------------------------------------------
 
-include ${REMOTE_WS_DIR}/build/rules.cpp.make
+include ${AOKLIB_WS_DIR}/build/rules.cpp.make
+
 
 

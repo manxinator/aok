@@ -1,4 +1,5 @@
-#---------------------------------------------------------------------
+#!/bin/bash
+#-------------------------------------------------------------------------------
 # Copyright (c) 2015 manxinator
 # 
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -18,30 +19,25 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
-#---------------------------------------------------------------------
-# Created: Mon Mar 30 00:45:27 PDT 2015
-#---------------------------------------------------------------------
+#-------------------------------------------------------------------------------
+# The purpose of this file is to setup environment variables for
+# local and remote directories.
+#
+# From the Project directory (Local workspace), run:
+#  . scripts/setup_env.sh
+#-------------------------------------------------------------------------------
 
-ifndef _MK_AOK_LOADER_
-_MK_AOK_LOADER_=1
+export TMP_PROJ_NAME=`pwd`
+export TMP_BASE_PWD=`basename ${TMP_PROJ_NAME}`
+export TMP_BASE_DIR=`pwd | sed "s/\/${TMP_BASE_PWD}//g"`
 
-        #-------------------------------------------------------------
+export LOCAL_WS_DIR="${TMP_BASE_DIR}/${TMP_BASE_PWD}"
+export REMOTE_WS_DIR="${TMP_BASE_DIR}/aokLib"
 
-C99_FILES+=\
-  aokLoaderFuncs.c \
-  aokLexer.c \
-  c_utils.c \
+unset TMP_PROJ_NAME
+unset TMP_BASE_PWD
+unset TMP_BASE_DIR
 
-INCPATH+=\
-  ${AOKLIB_WS_DIR}/aok \
 
-vpath %c \
-  ${AOKLIB_WS_DIR}/aok \
-
-vpath %cpp \
-  ${AOKLIB_WS_DIR}/aok \
-
-        #-------------------------------------------------------------
-endif
 
 
