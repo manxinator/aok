@@ -34,6 +34,8 @@ export TMP_BASE_DIR=`pwd | sed "s/\/${TMP_BASE_PWD}//g"`
 export LOCAL_WS_DIR="${TMP_BASE_DIR}/${TMP_BASE_PWD}"
 export REMOTE_WS_DIR="${TMP_BASE_DIR}/aokLib"
 
+export PATH="${LOCAL_WS_DIR}/bin:${LOCAL_WS_DIR}/scripts:${REMOTE_WS_DIR}/scripts:${PATH}"
+
 unset TMP_PROJ_NAME
 unset TMP_BASE_PWD
 unset TMP_BASE_DIR
