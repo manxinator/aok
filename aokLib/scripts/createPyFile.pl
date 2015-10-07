@@ -22,7 +22,7 @@
 #---------------------------------------------------------------------
 # Perl script to generate python files
 # Author : manxinator
-# Created: Mon Mar 21 20:11:07 PDT 2015
+# Created: Wed Oct  7 02:25:29 PDT 2015
 #---------------------------------------------------------------------
 
 use warnings;
@@ -62,11 +62,9 @@ sub generateFile
   if ($r_c != 0) {
     die "error executing $l_cmd";
   }
+  my $pyVer = $datPyV;
+  chomp($pyVer);
 
-  printf("Exec: **$l_cmd**\n");
-  print "Output  was **$datPyV**\n";
-  print "RetCode was **$r_c**\n";
-  my $pyVer = $datPyV; chomp($pyVer);
 
   my $outF;
   open $outF, ">", $fileName or die("\nERROR: Unable to open $fileName for output!\n\n");
