@@ -20,7 +20,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 #---------------------------------------------------------------------
-# Package-specific Top Level Makefile
+# Perl script to generate C/C++/H files
 # Author : manxinator
 # Created: Mon Mar 21 20:11:07 PDT 2015
 #---------------------------------------------------------------------
