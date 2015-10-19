@@ -80,7 +80,7 @@ sub generateFile
   print $outF "* SOFTWARE.\n";
   print $outF "********************************************************************************\n";
   print $outF "* $fileName\n";
-  print $outF "* Author : $userStr\n";
+  print $outF "* Author:  $userStr\n";
   print $outF "* Created: $dateStr\n";
   print $outF "*******************************************************************************/\n";
   print $outF "\n";

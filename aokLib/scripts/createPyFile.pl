@@ -38,7 +38,7 @@ Usage: createPyFile.pl [options] <NEWFILE>
 Options:
 -user=<USER_NAME>
     Override default author name
--python=<USER_NAME>
+-python=<PATH_TO_BIN>
     Override default python binary
 -h
 -help
@@ -92,7 +92,7 @@ sub generateFile
   print $outF "# SOFTWARE.\n";
   print $outF "#-------------------------------------------------------------------------------\n";
   print $outF "# $fileName\n";
-  print $outF "# Author :  $userStr\n";
+  print $outF "# Author:   $userStr\n";
   print $outF "# Created:  $dateStr\n";
   print $outF "# Language: $pyVer\n";
   print $outF "#-------------------------------------------------------------------------------\n";
