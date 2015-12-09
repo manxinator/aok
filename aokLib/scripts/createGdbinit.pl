@@ -33,7 +33,7 @@ use File::Basename;
 
 sub Help {
     print <<EOF;
-Usage: createGdbinit.pl [options] <NEWaFILE>
+Usage: createGdbinit.pl [options] <NEW_FILE>
        All files specified must be relative to current path
 Options:
 -b=<BREAKPOINT>
@@ -65,6 +65,10 @@ sub generateFile
 
     my $fullFileName = `which $binFileName`;
     chomp $fullFileName;
+    if ($fullFileName eq "") {
+        $fullFileName = "./$binFileName";
+        chomp $fullFileName;
+	}
 
     printf "verb: $verbosity, runArgs: $runArgs, binary: $fullFileName\n";
 
