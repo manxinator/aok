@@ -83,6 +83,19 @@ endif
 
         #-------------------------------------------------------------
 
+# Compile options
+#
+ifdef MAKE_DEBUG
+  CPPFLAGS += -g -DDEBUG=1
+else
+  CPPFLAGS += -O2 -DNDEBUG=1
+endif
+ifdef MAKE_STRICT
+  CPPFLAGS += -Wall -Werror
+endif
+
+        #-------------------------------------------------------------
+
 C99_OBJ_FILES        += $(addprefix ${OBJ_DIR}/, $(subst .c,.o,  ${C99_FILES}))
 CXX_OBJ_FILES        += $(addprefix ${OBJ_DIR}/, $(subst .cpp,.o,${CXX_FILES}))
 CPP_SORTED_OBJ_FILES  = $(sort ${C99_OBJ_FILES} ${CXX_OBJ_FILES})
