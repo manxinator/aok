@@ -94,6 +94,10 @@ ifdef MAKE_STRICT
   CPPFLAGS += -Wall -Werror
 endif
 
+ifdef LOCAL_CFLAGS
+  CPPFLAGS += $(LOCAL_CFLAGS)
+endif
+
         #-------------------------------------------------------------
 
 C99_OBJ_FILES        += $(addprefix ${OBJ_DIR}/, $(subst .c,.o,  ${C99_FILES}))
