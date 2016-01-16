@@ -54,12 +54,13 @@ sub generateFile
   my $headingDef = shift;
   my $userStr    = shift;
   my $dateStr    = shift;
+  my $yearStr    = shift;
 
   my $outF;
   open $outF, ">", $fileName or die("\nERROR: Unable to open $fileName for output!\n\n");
 
   print $outF "/*******************************************************************************\n";
-  print $outF "* Copyright (c) 2015 $userStr\n";
+  print $outF "* Copyright (c) $yearStr $userStr\n";
   print $outF "*\n";
   print $outF "* Permission is hereby granted, free of charge, to any person obtaining a copy\n";
   print $outF "* of this software and associated documentation files (the \"Software\"), to deal\n";
@@ -112,10 +113,12 @@ sub Main
   my $headingDef  = "";
   my $newFileName = "";
   my $dateStr     = "";
+  my $yearStr     = "";
   my $userStr     = "";
 
-  $userStr = `whoami`; chomp($userStr);
-  $dateStr = `date`;   chomp($dateStr);
+  $userStr = `whoami`;     chomp($userStr);
+  $dateStr = `date`;       chomp($dateStr);
+  $yearStr = `date +"%Y"`; chomp($yearStr);
 
   foreach my $arg (@ARGV) {
     if ($arg =~ m/^-def=/) {
@@ -152,7 +155,7 @@ sub Main
     printf("verb: $verbosity, headingDef: '$headingDef', newFile: $newFileName, user: $userStr, date: $dateStr\n");
   }
 
-  generateFile($newFileName, $headingDef, $userStr, $dateStr);
+  generateFile($newFileName, $headingDef, $userStr, $dateStr, $yearStr);
 }
 
 #---------------------------------------------------------------------

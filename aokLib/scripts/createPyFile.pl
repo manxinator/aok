@@ -54,6 +54,7 @@ sub generateFile
   my $userStr    = shift;
   my $pythonPath = shift;
   my $dateStr    = shift;
+  my $yearStr    = shift;
 
   my $l_cmd  = "$pythonPath --version";
   my $datPyV = qx($l_cmd 2>&1);
@@ -71,7 +72,7 @@ sub generateFile
 
   print $outF "#!$pythonPath\n";
   print $outF "#-------------------------------------------------------------------------------\n";
-  print $outF "# Copyright (c) 2015 $userStr\n";
+  print $outF "# Copyright (c) $yearStr $userStr\n";
   print $outF "#\n";
   print $outF "# Permission is hereby granted, free of charge, to any person obtaining a copy\n";
   print $outF "# of this software and associated documentation files (the \"Software\"), to deal\n";
@@ -114,11 +115,13 @@ sub Main
   my $verbosity   = 0;
   my $newFileName = "";
   my $dateStr     = "";
+  my $yearStr     = "";
   my $userStr     = "";
   my $pyStr       = "";
 
   $userStr = `whoami`;       chomp($userStr);
   $dateStr = `date`;         chomp($dateStr);
+  $yearStr = `date +"%Y"`;   chomp($yearStr);
   $pyStr   = `which python`; chomp($pyStr);
 
   foreach my $arg (@ARGV) {
@@ -155,7 +158,7 @@ sub Main
     printf("verb: $verbosity, newFile: $newFileName, user: $userStr, date: $dateStr\n");
   }
 
-  generateFile($newFileName, $userStr, $pyStr, $dateStr);
+  generateFile($newFileName, $userStr, $pyStr, $dateStr, $yearStr);
 }
 
 #---------------------------------------------------------------------
